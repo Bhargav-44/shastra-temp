@@ -32,20 +32,6 @@ export default function Events() {
 
 
     useEffect(() => {
-        // setUpcoming_Event([
-        //     { "name":"One", "criteria":"All", "image":Hackathon, "link":"https://www.google.com", "date":"2021-10-10"},
-        //     { "name":"Two", "criteria":"All", "image":Gaming, "link":"https://www.google.com", "date":"2021-10-10" },
-        //     { "name":"Three", "criteria":"All", "image":HackaWack, "link":"https://www.google.com", "date":"2021-10-10"},
-        // ])
-
-        // setPast_Event([
-        //     { "name":"One", "criteria":"All", "image":Hackathon, "link":"https://www.google.com" },
-        //     { "name":"Two", "criteria":"All", "image":Gaming, "link":"https://www.google.com" },
-        //     { "name":"Three", "criteria":"All", "image":HackaWack, "link":"https://www.google.com" },
-        //     { "name":"Four", "criteria":"All", "image":Hackathon, "link":"https://www.google.com" },
-        //     { "name":"Five", "criteria":"All", "image":Gaming, "link":"https://www.google.com" },
-        //     { "name":"Six", "criteria":"All", "image":HackaWack, "link":"https://www.google.com" },
-        // ])
         fetchEvent(UpcomingEvents, setUpcoming_Event)
         fetchEvent(pastEvents, setPast_Event)
     }, [])
