@@ -19,7 +19,7 @@ export default function Carousel(props) {
     }
 
     return (
-        <div className="relative flex h-full w-full py-10 bg-gradient-to-br from-[#000778] from-[20%] via-slate-500 via-30% to-[#FF9201] to-40% md:to-40%">
+        <div className="relative flex contain w-full bg-gradient-to-br from-[#000778] from-[20%] via-slate-500 via-30% to-[#FF9201] to-40% md:to-40%">
             <div className="mx-auto sm:px-10 relative px-5 w-full flex flex-row justify-center overflow-hidden md:h-auto">
                 <Swiper
                     slidesPerView={1}

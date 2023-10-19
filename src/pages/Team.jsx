@@ -1,59 +1,14 @@
 import React, { useEffect, useState } from "react"
 import { nanoid } from "nanoid"
+import {core, sub_core} from "../data"
 
 import TeamCard from "../components/Card/TeamCard"
 
-const core_API = "http://localhost:1337/api/cores";
-// const subcore_API = "https://shastra-api.onrender.com/subcoreMembers";
-const subcore_API = "http://localhost:1337/api/sub-cores";
-
 
 export default function Team() {
-    const [core, setCore] = useState([])
-    const [subCore, setSubCore] = useState([])
 
-    // const fetchTeam = async(url, setTeam) => {
-    //     try {
-    //         const res = await fetch(url, {
-    //             method: "GET",
-    //             crossDomain: true,
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //                 Accept: "application/json",
-    //                 "Access-Control-Allow-Origin": ""
-    //             }
-    //         });
-    //         const data = await res.json()
-    //         console.log(data)
-    //         if(data.length > 0){
-    //             setTeam(data.data)
-    //         } else {
-    //             throw new console.error("No data found")
-    //         }
-    //     } catch (error) {
-    //         throw new console.error(error)
-    //     }
-    // }
 
-    const fetchTeam = async (url, setTeam) => {
-        try {
-          const res = await fetch(url);
-          const data = await res.json();
-          if (data.data.length > 0) {
-            setTeam(data.data);
-            console.log("subcore", subCore)
-          } else {
-            throw new Error("No data found");
-          }
-        } catch (error) {
-          console.error(error);
-        }
-      };
-
-    useEffect(() => {
-        fetchTeam(core_API, setCore);
-        fetchTeam(subcore_API, setSubCore)
-    }, [])
+    console.log(sub_core)
 
     return (
         <div className="relative z-10 min-h-[100%]">
@@ -70,10 +25,10 @@ export default function Team() {
                             <TeamCard 
                                 key={nanoid()}
                                 id={member.id}
-                                image={member.attributes.Image}
-                                name={member.attributes.Name}
-                                designation={member.attributes.Designation}
-                                linkedin={member.attributes.LinkedIn}
+                                image={member.image}
+                                name={member.name}
+                                designation={member.designation}
+                                linkedin={member.linkedin}
                             />
                         ))
                     }
@@ -86,16 +41,17 @@ export default function Team() {
                 <div className="team--subcore-grid team-card"
                 >
                     {
-                        subCore && 
-                        subCore.map(member => (
+
+                        sub_core.map(member => (
                             <TeamCard 
                                 key={nanoid()}
                                 id={member.id}
-                                image={member.attributes.Image}
-                                name={member.attributes.Name}
-                                designation={member.attributes.Designation}
-                                linkedin={member.attributes.LinkedIn}
+                                image={member.image}
+                                name={member.name}
+                                designation={member.designation}
+                                linkedin={member.linkedin}
                             />
+                            
                         ))
                     }
                 </div>
