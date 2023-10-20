@@ -288,7 +288,7 @@ const sub_core =
       designation: "Problem Setters, tester and editorial",
       linkedin: "https://www.linkedin.com/in/amitkumar-singh-1869b224a/",
       image:
-        "https://i.pinimg.com/736x/06/6a/e7/066ae79c961041fca3a1745a838f5f29.jpg",
+        "https://i.imgur.com/rNXoDG8.jpg",
     },
     {
       name: "Ayush Anil Khalate",
